@@ -21,7 +21,15 @@ function App() {
   },[])
   
   return (
-    <section>
+    <>
+    <div className='showcase'>
+      <div className='overlay'>
+        <h1 className='title'>Articles about {query}</h1>
+
+      </div>
+    </div>
+    
+    <section className='listItem'>
       {articles.map((article) => {
         const {abstract, headline:{main}, news_desk, web_url, word_count, byline:{original},section_name, _id, lead_paragraph} = article
 
@@ -43,6 +51,7 @@ function App() {
         )
       })}
     </section>
+    </>
   );
 }
 

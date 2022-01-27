@@ -24,7 +24,7 @@ function App() {
     <>
     <div className='showcase'>
       <div className='overlay'>
-        <h1 className='title'>Articles about {query}</h1>
+        <h1 className='mainTitle'>Articles about {query}</h1>
 
       </div>
     </div>
@@ -34,19 +34,19 @@ function App() {
         const {abstract, headline:{main}, news_desk, web_url, word_count, byline:{original},section_name, _id, lead_paragraph} = article
 
         return(
-          <article key={_id}>
-            <h2>{main}</h2>
-            <h4>{abstract}</h4>
-            <a href={web_url} target='_blank'>
+          <article key={_id} className='bodyArticle'>
+            <h2 className='title'>{main}</h2>
+            <p>{abstract}</p>
+            <p>{lead_paragraph}</p>
+            <ul className='listArticles'>
+              <li>{original}</li>
+              <li><span className='infoTitle'>News Desk:</span> {news_desk}</li>
+              <li><span className='infoTitle'>Name:</span>  {section_name}</li>
+              <li><span className='infoTitle'>Word Count:</span>  {word_count}</li>
+            </ul>
+            <a href={web_url} target='_blank' className='linkToResource'>
               Web Resource
             </a>
-            <p>{lead_paragraph}</p>
-            <ul>
-              <li>{original}</li>
-              <li>{news_desk}</li>
-              <li>{section_name}</li>
-              <li>{word_count}</li>
-            </ul>
           </article>
         )
       })}

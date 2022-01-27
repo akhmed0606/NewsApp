@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+    background-color: #eee;
 }
 
 .showcase {
@@ -18,7 +19,7 @@ body {
   justify-content: center;
   padding: 0,20px,0,20px;
 }
-.title {
+.mainTitle {
   font-size: 2.25rem;
   font-weight: bold;
   color: white;
@@ -26,10 +27,35 @@ body {
   margin-bottom: 1rem;
 }
 .listItems {
-  padding: 40px,20px,80px,20px;
+  padding: 40px 20px 80px 20px;
   display: grid;
   grid-template-columns: repeat(1,minmax(0,1fr));
   gap:40px;
 }
+.title {
+  text-align: center;
+  font-size: 4em;
+  text-align: center;
+  font-family: "Gravitas One", cursive;
+  margin-bottom: 10px;
+  line-height: 2;
+  text-shadow: 4px 3px 0px #cccdbf, 9px 8px 0px rgba(0, 0, 0, 0.15);
+}
+.listArticles {
+  margin: 16px 0 16px 0;
+  list-style: none;
+}
+.linkToResource{
+  text-decoration: underline;
+}
+.infoTitle{
+  font-weight: bold;
+}
 
+.bodyArticle{
+  background-color: white;
+  margin: 40px;
+  padding: 3px 10px 20px 10px;
+  border-radius: 0.5rem;
+}
 

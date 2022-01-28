@@ -1,23 +1,24 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
-    background-color: #eee;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+  background-color: #eee;
 }
 
 .showcase {
-  background: url(https://images.pexels.com/photos/1369476/pexels-photo-1369476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center/cover;
+  background: url(https://images.pexels.com/photos/1369476/pexels-photo-1369476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+    no-repeat center/cover;
   height: 400px;
 }
 
 .showcase .overlay {
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0,20px,0,20px;
+  padding: 0, 20px, 0, 20px;
 }
 .mainTitle {
   font-size: 2.25rem;
@@ -27,35 +28,65 @@ body {
   margin-bottom: 1rem;
 }
 .listItems {
-  padding: 40px 20px 80px 20px;
   display: grid;
-  grid-template-columns: repeat(1,minmax(0,1fr));
-  gap:40px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  
 }
 .title {
-  text-align: center;
-  font-size: 4em;
-  text-align: center;
-  font-family: "Gravitas One", cursive;
-  margin-bottom: 10px;
-  line-height: 2;
-  text-shadow: 4px 3px 0px #cccdbf, 9px 8px 0px rgba(0, 0, 0, 0.15);
+  color: #221e1d;
+  font-size: 36px;
+  font-family: "Signika", sans-serif;
 }
 .listArticles {
-  margin: 16px 0 16px 0;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: square;
 }
-.linkToResource{
-  text-decoration: underline;
-}
-.infoTitle{
-  font-weight: bold;
+.listArticles li:first-child {
+  list-style:none;
+  font-family: "Signika", sans-serif;
+  color:peru;
+  padding-right: 1rem;
 }
 
-.bodyArticle{
+.linkToResource {
+  text-decoration: underline;
+  color: black;
+}
+.infoTitle {
+  font-weight: bold;
+}
+p {
+  font-family: "Inder", sans-serif;
+  line-height: 28px;
+  color: #666;
+}
+.bodyArticle {
   background-color: white;
   margin: 40px;
-  padding: 3px 10px 20px 10px;
+  padding: 3px 10px 20px 20px;
   border-radius: 0.5rem;
 }
 
+a {
+  color: blue;
+  font-family: helvetica;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+}
+
+@media (min-width: 1200px) {
+  .bodyArticle {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

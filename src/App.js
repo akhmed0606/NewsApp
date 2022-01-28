@@ -4,7 +4,7 @@ import axios from "axios";
 
 function App() {
   const [articles, setArticles] = useState([]);
-  const [query, setQuery] = useState("everything");
+  const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
           <SearchForm searchText={(text) => setQuery(text)} />
         </div>
       </div>
-      
+
       {isLoading ? (
         <h1 className="title">Loading...</h1>
       ) : (
@@ -68,11 +68,7 @@ function App() {
                     <span className="infoTitle">Word Count:</span> {word_count}
                   </li>
                 </ul>
-                <a
-                  href={web_url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={web_url} target="_blank" rel="noreferrer">
                   Read More
                 </a>
               </article>
@@ -81,7 +77,7 @@ function App() {
         </section>
       )}
     </>
-  )
+  );
 }
 
 export default App;

@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
+import SearchForm from './SearchForm'
 import axios from 'axios'
 
 function App() {
   const [articles, setArticles] = useState([])
   const [query, setQuery] = useState('everything')
-  const [load, setLoad] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   const fetchNews = async () => {
     await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${process.env.REACT_APP_API_KEY}`).then((res) => {
       const articles =  res.data
-      console.log(articles.response.docs)
       setArticles(articles.response.docs)
+      setIsLoading(false)
     })
     .catch((error) => {
       console.log(error)
@@ -26,15 +27,19 @@ function App() {
     <div className='showcase'>
       <div className='overlay'>
         <h1 className='mainTitle'>Articles about {query}</h1>
-         
+         <SearchForm />
       </div>
     </div>
+    {isLoading ? (<h1 className='title'>Loading...</h1>
     
-    <section className='listItem'>
+    ) : (
+
+      <section className='listItem'>
       {articles.map((article) => {
         const {abstract, headline:{main}, news_desk, web_url, word_count, byline:{original},section_name, _id, lead_paragraph} = article
 
         return(
+
           <article key={_id} className='bodyArticle'>
             <h2 className='title'>{main}</h2>
             <p>{abstract}</p>
@@ -52,8 +57,10 @@ function App() {
         )
       })}
     </section>
-    </>
-  );
+    
+  )}
+  </>
+  ) 
 }
 
 export default App;

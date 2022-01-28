@@ -1,15 +1,28 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-const SearchForm = () => {
-const [ text, setText ] = useState('')
+function SearchForm({ searchText }) {
+    const [text, setText] = useState('');
 
-  return <div>
-     <form>
-         <label htmlFor='search'>
-         <input type='text' placeholder='e.g politics' className='input' /><button type='submit' className='btn'>Search</button>
-         </label>
-         </form> 
-  </div>;
-};
+    const handleSubmit = (e) => {
+        e.prevent.default();
+        
+        searchText(text);
+    };
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="search">
+                    <input type="text" placeholder="e.g politics" className="input" onChange={(e) => setText(e.target.value)} />
+
+                    <button type="submit" className="btn">
+                        Search
+                    </button>
+                </label>
+            </form>
+            
+        </div>
+    );
+}
 
 export default SearchForm;

@@ -9,6 +9,7 @@ function App() {
   const fetchNews = async () => {
     await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${process.env.REACT_APP_API_KEY}`).then((res) => {
       const articles =  res.data
+      console.log(articles.response.docs)
       setArticles(articles.response.docs)
     })
     .catch((error) => {
@@ -25,7 +26,7 @@ function App() {
     <div className='showcase'>
       <div className='overlay'>
         <h1 className='mainTitle'>Articles about {query}</h1>
-
+         
       </div>
     </div>
     
@@ -44,8 +45,8 @@ function App() {
               <li><span className='infoTitle'>Name:</span>  {section_name}</li>
               <li><span className='infoTitle'>Word Count:</span>  {word_count}</li>
             </ul>
-            <a href={web_url} target='_blank' className='linkToResource'>
-              Web Resource
+            <a href={web_url} target='_blank' className='linkToResource' className='more-link'>
+              Read More
             </a>
           </article>
         )

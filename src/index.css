@@ -50,10 +50,6 @@ body {
   padding-right: 1rem;
 }
 
-.linkToResource {
-  text-decoration: underline;
-  color: black;
-}
 .infoTitle {
   font-weight: bold;
 }
@@ -87,6 +83,9 @@ a:active {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border: none;
+}
+.input:focus {
+  outline: none;
 }
  .btn {
   background-color: rgb(74 222 128);

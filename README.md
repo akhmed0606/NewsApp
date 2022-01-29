@@ -4,6 +4,8 @@
 
 *New York Times article feed with real-time updates that allows to search the latest news.*
  
+ [news_app](https://akhmed0606.github.io/news_app/)
+ 
 <br>
 
 ## ⚙ Technologies

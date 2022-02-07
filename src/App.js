@@ -29,7 +29,7 @@ function App() {
     <>
       <div className="showcase">
         <div className="overlay">
-          <h1 className="mainTitle">Articles about {query}</h1>
+          <h1 className="mainTitle" data-testid="checkTitle">Articles about {query}</h1>
           <SearchForm searchText={(text) => setQuery(text)} />
         </div>
       </div>
@@ -54,7 +54,7 @@ function App() {
             return (
               <article key={_id} className="bodyArticle">
                 <h2 className="title">{main}</h2>
-                <p>{abstract}</p>
+                <p data-testid='article'>{abstract}</p>
                 <p>{lead_paragraph}</p>
                 <ul className="listArticles">
                   <li>{original}</li>

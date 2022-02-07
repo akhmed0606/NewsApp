@@ -16,7 +16,6 @@ const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}
 const { getByTestId } = render(<App url={url} />)
 expect(getByTestId("checkTitle")).toHaveTextContent('Articles about')
 
-
  const resolvedData =  await waitFor(() => getByTestId("article"));
  expect(resolvedData).toHaveTextContent("");
  expect(axiosMock.get).toHaveBeenCalledTimes(1);

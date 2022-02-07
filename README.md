@@ -15,6 +15,7 @@ This project was developed using the following tools and technologies:
 - [React](https://create-react-app.dev/)
 - [Axios](https://www.npmjs.com/package/axios)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 <br>
 
